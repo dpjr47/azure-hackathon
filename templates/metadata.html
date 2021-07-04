@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="metadata.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/metadata.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="user signinBx">
+          <div class="formBx">
+            <form action="metanext">              
+              <h2>Metadata</h2>
+              <!-- fetch from backend -->
+              <input type="email" name="user_name" placeholder={{name}} disabled>
+              <input type="text" name="user_email" placeholder={{email}} disabled /> 
+              <input type="number" name="user_phone" placeholder="Phone Number">
+              <input type="number" name="user_age" placeholder="Age" />
+              <select name="user_sex">
+                <option value="" selected disabled hidden>Select your biological sex*</option>
+                <option value="">Male</option>
+                <option value="">Female</option>
+                <option value="">Others</option>
+                <option value="">Prefer not to say</option>
+              </select> <br>
+              <div class="input-box">
+                <select id="country" name="user_country"></select>
+              </div>
+  
+              <div class="input-box">
+                <select name="user_state" id="state">
+                  <option value="" selected="selected">
+                    Please select country first
+                  </option>
+                </select>
+              </div>
+  
+              <div class="input-box"> 
+                <input type="text"  name="user_district" placeholder="Enter your district*" required />
+              </div>
+              <p>**Please complete the following data to setup your account, these are for research purposes only. By clicking next you are accepting our terms and conditions.</p>
+
+              <input type="submit" name="" value="Next" />              
+            </form>
+          </div>
+        </div>        
+      </div>
+
+      <!-- <script src="countries.js"></script> -->
+      <script src="{{url_for('static', filename='js/countries.js')}}"></script>
+      <script language="javascript">
+        populateCountries("country", "state");
+      </script>
+</body>
+</html>

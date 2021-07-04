@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main page</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      
+
+      
+      <div class="box a">
+
+        
+        <main id="home" >
+          <div class="greet">
+
+            <div class="greet-texts">
+              <h1>Welcome,</h1>
+              <h3>{{user_name}}</h3>
+            </div>
+    
+            <div class="greet-image">
+              <img src="{{img}}" alt="" height="100px" width="100px">
+            </div>
+    
+          </div>
+          {%if data==0%}
+          <h3>you have not taken a Test</h3>
+          {%else%}
+        <div class="previous_history" >
+
+          <div class="table-abovehead">
+            <h3> Previous history</h3>
+          </div>
+
+          <div class="table-coloumn">
+            <table>
+              <tr>
+                <th>No.</th>
+                <th>Date</th>
+                <th>Result</th>
+              </tr>
+
+              {%for x in data %}
+              <tr>
+                <td>{{x['number']}}</td>
+                <td>{{x['_id']}}</td>
+                <td>{{x['result']}}</td>
+              </tr>
+              {%endfor%}
+
+            </table>
+          </div>
+
+        </div>
+        {%endif%}
+
+        <div class="news">
+          <div class="scroll">
+            <h3>Covid-19 Statistics - India</h3>
+            <marquee behavior="" direction="up" scrollamount="2">
+              <div id = "ubox2">
+              </div>  
+            </marquee>
+          </div>
+         
+        </div>
+
+        <div class="news">
+          <div class="scroll">
+            <h3>Covid-19 Updates</h3>
+            <marquee behavior="" direction="up" scrollamount="2">
+              <div id = "ubox">
+              </div>  
+            </marquee>
+          </div>
+         
+        </div>
+
+        <div class="bottom-child">
+          <center>random text-dnt delte</center> 
+          <br>         
+        </div>
+
+      </main>  
+
+      <main id="account">
+        <div class="greet-faq">
+
+          <div class="greet-texts">
+            <a href="redirect"><h1><</h1></a>          
+          </div>
+          <div id="logout" style="display: inline-block; ">
+            <div style="float:right" class="log-inner">
+              <a id="log-a" >
+                <span class="material-icons">logout</span><h3>Logout</h3>
+              </a>
+            </div>
+           
+          </div>
+         
+        </div> 
+        <section style="height:100%; overflow:scroll;" >
+          <div class="box">
+            <h2><span class="material-icons">settings</span>Settings</h2>
+          </div>
+
+          <div class="box-settings" style="margin-bottom: 10px;">
+            <div class="box-settings-inner">
+              <a id="toggle3" >
+                <span class="material-icons">
+                  photo
+                  </span>
+                <h4>Change Profile picture</h4></a> 
+                <div class="container" id="photo">
+                  <div class="user signinBx">
+                    <div class="formBx">
+                      <form action="update_image" enctype="multipart/form-data" method="POST">
+                        <!-- fetch from backend -->
+                        <input type="file" name="new_image">                                  
+                        <button type="submit">Update</button>             
+                      </form>
+                    </div>
+                  </div>        
+                </div>      
+              </div>
+            </div>
+
+          <div class="box-settings">
+            <div class="box-settings-inner">
+              <a id="toggle">
+                <span class="material-icons">
+                  person
+                  </span>
+                <h4>Edit profile</h4></a> 
+                <div class="container" id="edit_profile">
+                  <div class="user signinBx">
+                    <div class="formBx">
+                      <form action="update_profile" method="POST">
+                        <!-- fetch from backend -->
+                        <input type="email" name="" placeholder="{{user_email}}" disabled>
+                        <input type="text" name="" placeholder="{{user_name}}" disabled /> 
+                        <input type="number" name="edited_number" placeholder="Phone Number">
+                        <input type="number" name="edited_age" placeholder="Age" />
+                        <select name="edited_sex">
+                          <option value="" selected disabled hidden>Select your biological sex*</option>
+                          <option value="">Male</option>
+                          <option value="">Female</option>
+                          <option value="">Others</option>
+                          <option value="">Prefer not to say</option>
+                        </select> <br>
+                        <div class="input-box">
+                          <select id="country" name="country"></select>
+                        </div>
+            
+                        <div class="input-box">
+                          <select name="state" id="state">
+                            <option value="" selected="selected">
+                              Please select country first
+                            </option>
+                          </select>
+                        </div>
+            
+                        <div class="input-box"> 
+                          <input type="text" name ="district" placeholder="Enter your district*" required />
+                        </div>
+                                  
+                        <button type="submit">Update</button>             
+                      </form>
+                    </div>
+                  </div>        
+                </div>      
+              </div>
+                            
+              
+            <div class="box-settings-inner">
+              <a id="toggle2">
+                <span class="material-icons">
+                  vpn_key
+                  </span>
+                  <h4>Change password</h4>     
+                </a>
+                  <div class="container" id="password">
+                    <div class="user signinBx">
+                      <div class="formBx" style="float: left;">
+                        <form action="update_password" method="POST">
+                          <!-- fetch from backend -->
+                          <input type="text" name="old_password" placeholder="Old password" >
+                          <input type="password" name="new_password" placeholder="New password" /> 
+                          <input type="text" name="" placeholder="Confirm password">             
+                          <button type="submit">Update</button>             
+                        </form>
+                      </div>
+                    </div>        
+                  </div> 
+            </div>
+          </div>
+          <div class="bottom-child">
+            <center>random text-dnt delte</center> 
+            <br>         
+          </div>
+            
+        </section>
+
+           
+          
+        
+        
+        
+       
+      </main>
+
+      <main id="faq">
+        <div class="greet-faq">
+
+          <div class="greet-texts">
+            <a href="redirect"><h1><</h1></a> 
+            
+          </div>
+         
+        </div>
+
+        <div class="box" id="faq-header">
+          <h2>FAQ - CovoX</h2>
+        </div>
+        <section>
+          <div class="faq__main">
+            <details>
+              <summary>What is covox?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>How to contribute vocal data ?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>how significant is the covid test in covox?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>how to contribute if iam  not covid  positive?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>My covid test shows iam covid negative is it 100% reliable?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>My covid test in covox shows iam covid positive,so what is the next step to follow ?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>what is the best way to record the audio?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>will the ability of the device to record audio affect the results?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Two adjacent test shows iam covid positive and negative which value should i rely on ?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Is there any chance of misuse of my personal data?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <div class="bottom-child">
+          <center>random text-dnt delte</center> 
+          <br>         
+        </div>
+      </main>
+
+      <main id="test" >
+        <div class="greet-faq">
+
+          <div class="greet-texts">
+            <a href="redirect"><h1><</h1></a>          
+          </div>         
+         
+        </div>
+
+        <div id="faq-header">
+          <h2>Covid Test</h2>
+        </div>
+        
+        <div id="test-box">
+          <a  href="covid_test">
+            <span class="material-icons">
+              graphic_eq
+            </span> <br>
+            <h3>Click here to redirect to the test page </h3>
+          </a> 
+          
+        </div>
+         
+
+      </main>
+
+      </div>
+
+
+      
+      <!--Footer Navigation bar-->
+      <div class="box c">
+        <nav class="nav">
+
+          <a onclick="mainshow1()" class="nav__link">
+            <i class="material-icons nav__icon">quiz</i>
+            <span class="nav__text">FAQ</span>
+          </a>
+
+          <a onclick="mainshow2()" class="nav__link">
+            <i class="material-icons nav__icon">dashboard</i>
+            <span class="nav__text">Test</span>
+          </a>
+
+          <a onclick="mainshow3()" class="nav__link">
+            <i class="material-icons nav__icon">home</i>
+            <span class="nav__text">Home</span>
+          </a>
+
+          <a onclick="mainshow4()" class="nav__link">
+            <i class="material-icons nav__icon">person</i>
+            <span class="nav__text">Profile</span>
+          </a>
+
+          
+        </nav>
+      </div>
+      <!--Footer Navigation bar-->
+
+
+    </div> <!--main wrapper div-->
+    <script>
+      $(document).ready(function() {
+        $("#toggle").click(function() {
+           $("#edit_profile").toggle(1000);
+        });
+   });
+
+   $(document).ready(function() {
+    $("#toggle2").click(function() {
+       $("#password").toggle(1000);
+        });
+    });
+    $(document).ready(function() {
+      $("#toggle3").click(function() {
+         $("#photo").toggle(1000);
+          });
+      });
+      
+    </script>
+
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+  </body>
+</html>

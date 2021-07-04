@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contribution | Test Page</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Contribution_index_survey.css') }}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    
+    <main>
+      <div class="survey">
+        <h1 >Survey</h1>
+      </div>      
+     <form action="{{ url_for('process')}}"  method="post" >
+        
+        <section class="record">
+          <div class="form_inner_headings">
+            <h3>Data Recording</h3>
+            <table>
+              <tr>
+              <td style="color: crimson; text-align: right;">*</td>
+              <td>Ensure that you are in a quiet room for better quality of sound.</td>
+              </tr>
+              <tr>
+                <td style="color: crimson; text-align: right;">**</td>
+                <td>Sanitise the device before further use.</td>
+              </tr>
+              <tr>
+                <td style="color: crimson; text-align: right;">***</td>
+                <td>Press the <span style="border: 1px solid black; padding: 2px; font-size: 8px;"><i class="fas fa-microphone-alt"></i> RECORD</span> button to record the audio.</td>
+              </tr>
+              <tr>
+                <td style="color: crimson; text-align: right;">***</td>
+                <td>Press the <span style="border: 1px solid black; padding: 2px; font-size: 8px;"><i class="far fa-stop-circle"></i> Stop</span> button to stop the recording</td>
+              </tr>
+              <tr>
+                <td style="color: crimson; text-align: right;">***</td>
+                <td>To re-record an audio press the <span style="border: 1px solid black; padding: 2px; font-size: 8px;"><i class="fas fa-microphone-alt"></i> RECORD</span> again</td>
+              </tr>              
+            </table>
+          </div>
+          <div class="user_record">
+
+
+            <div class="input-box">
+
+              <span class="label">1.Breathe(shallow)</span>
+              <div id="breathshallowContainer">
+               <div class="button_container">
+                  <div id="audioSupport"></div>
+
+                  <button
+                    type="button"
+                    id="recordButton">
+                  <i class="fas fa-microphone-alt"></i>record</button>
+
+                  <button type="button" id="pauseButton" disabled>
+                    <i class="far fa-pause-circle"></i>Pause
+                  </button>
+                  
+                  <button
+                    type="button"
+                    id="stopButton" disabled >
+                  <i class="far fa-stop-circle"></i>Stop</button>                                
+                  <button 
+                  type="button"
+                  id="uploadButton"
+                  disabled>
+                  <i class="fas fa-cloud-upload-alt"></i>
+                    upload
+                  </button>
+                   
+                   <ol id="recordingsList" style="list-style-type: none;">
+                    <li id='breathshallow'></li>                  
+                  </ol>
+
+
+                </div>
+               </div>            
+            </div>
+
+
+            <div class="input-box">
+              <span class="label">2.Breathe(deep)</span> 
+              <div id="breathdeepContainer">
+                <div class="">
+                  <div id="audioSupport"></div>
+                  
+                  <button
+                    type="button"
+                    id="record2Button">
+                  <i class="fas fa-microphone-alt"></i>record</button>
+
+                  <button type="button" id="pause2Button" disabled>
+                    <i class="far fa-pause-circle"></i>Pause
+                  </button>
+                  
+                  <button
+                    type="button"
+                    id="stop2Button" disabled >
+                  <i class="far fa-stop-circle"></i>Stop</button>                                
+                  <button 
+                  type="button"
+                  id="upload2Button"
+                  disabled>
+                  <i class="fas fa-cloud-upload-alt"></i>
+                    upload
+                  </button>
+                   
+                   <ol id="recordingsList2" style="list-style-type: none;">
+                    <li id='breathdeep'></li>                  
+                  </ol>
+
+              </div>
+              </div>              
+            </div>
+            <div class="input-box">
+              <span class="label">3.Cough(shallow)</span>
+              <div id="coughshallowContainer">
+                <div class="">
+                  <div id="audioSupport"></div>
+                  
+                  <button
+                    type="button"
+                    id="record3Button">
+                  <i class="fas fa-microphone-alt"></i>record</button>
+
+                  <button type="button" id="pause3Button" disabled>
+                    <i class="far fa-pause-circle"></i>Pause
+                  </button>
+                  
+                  <button
+                    type="button"
+                    id="stop3Button" disabled >
+                  <i class="far fa-stop-circle"></i>Stop</button>                                
+                  <button 
+                  type="button"
+                  id="upload3Button"
+                  disabled>
+                  <i class="fas fa-cloud-upload-alt"></i>
+                    upload
+                  </button>
+                   
+                   <ol id="recordingsList3" style="list-style-type: none;">
+                    <li id='coughshallow'></li>                  
+                  </ol>
+
+                </div>
+              </div>
+              
+            </div>
+            <div class="input-box">
+              <span class="label">4.Cough(heavy)</span>
+              <div id="coughheavyContainer">
+                <div class="">
+                  <div id="audioSupport"></div>
+                  
+                  <button
+                    type="button"
+                    id="record4Button">
+                  <i class="fas fa-microphone-alt"></i>record</button>
+
+                  <button type="button" id="pause4Button" disabled>
+                    <i class="far fa-pause-circle"></i>Pause
+                  </button>
+                  
+                  <button
+                    type="button"
+                    id="stop4Button" disabled >
+                  <i class="far fa-stop-circle"></i>Stop</button>                                
+                  <button 
+                  type="button"
+                  id="upload4Button"
+                  disabled>
+                  <i class="fas fa-cloud-upload-alt"></i>
+                    upload
+                  </button>
+                   
+                   <ol id="recordingsList4" style="list-style-type: none;">
+                    <li id='coughheavy'></li>                  
+                  </ol>
+
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="input-box">
+              <span class="label">5.Vowel 'a' </span>
+              <div id="aContainer">
+                <div class="">
+                  <div id="audioSupport"></div>
+                  
+                  <button
+                    type="button"
+                    id="record5Button">
+                  <i class="fas fa-microphone-alt"></i>record</button>
+
+                  <button type="button" id="pause5Button" disabled>
+                    <i class="far fa-pause-circle"></i>Pause
+                  </button>
+                  
+                  <button
+                    type="button"
+                    id="stop5Button" disabled >
+                  <i class="far fa-stop-circle"></i>Stop</button>                                
+                  <button 
+                  type="button"
+                  id="upload5Button"
+                  disabled>
+                  <i class="fas fa-cloud-upload-alt"></i>
+                    upload
+                  </button>
+                   
+                   <ol id="recordingsList5" style="list-style-type: none;">
+                    <li id='vowela'></li>                  
+                  </ol>
+
+                </div>
+              </div>
+              
+            </div>
+            <div class="input-box">
+              <span class="label">6.Vowel 'e'</span>
+              <div id="eContainer">
+                <div class="">
+                  <div id="audioSupport"></div>
+                  
+                  <button
+                    type="button"
+                    id="record6Button">
+                  <i class="fas fa-microphone-alt"></i>record</button>
+
+                  <button type="button" id="pause6Button" disabled>
+                    <i class="far fa-pause-circle"></i>Pause
+                  </button>
+                  
+                  <button
+                    type="button"
+                    id="stop6Button" disabled >
+                  <i class="far fa-stop-circle"></i>Stop</button>                                
+                  <button 
+                  type="button"
+                  id="upload6Button"
+                  disabled>
+                  <i class="fas fa-cloud-upload-alt"></i>
+                    upload
+                  </button>
+                   
+                   <ol id="recordingsList6" style="list-style-type: none;">
+                    <li id='vowele'></li>                  
+                  </ol>
+
+                </div>
+              </div>
+             
+            </div>
+
+
+            <div class="input-box">
+              <span class="label">7.Vowel 'o'</span>
+              <div id="oContainer">
+                <div class="">
+                  <div id="audioSupport"></div>
+                  
+                  <button
+                    type="button"
+                    id="record7Button">
+                  <i class="fas fa-microphone-alt"></i>record</button>
+
+                  <button type="button" id="pause7Button" disabled>
+                    <i class="far fa-pause-circle"></i>Pause
+                  </button>
+                  
+                  <button
+                    type="button"
+                    id="stop7Button" disabled >
+                  <i class="far fa-stop-circle"></i>Stop</button>                                
+                  <button 
+                  type="button"
+                  id="upload7Button"
+                  disabled>
+                  <i class="fas fa-cloud-upload-alt"></i>
+                    upload
+                  </button>
+                   
+                   <ol id="recordingsList7" style="list-style-type: none;">
+                    <li id='vowelo'></li>                  
+                  </ol>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="input-box">
+              <span class="label">8.Counting(Normal)</span>
+              <div id="countnormalContainer">
+                <div class="">
+                  <div id="audioSupport"></div>
+                  
+                  <button
+                    type="button"
+                    id="record8Button">
+                  <i class="fas fa-microphone-alt"></i>
+                  record
+                </button>
+
+                  <button 
+                  type="button" 
+                  id="pause8Button" 
+                  disabled>
+                    <i class="far fa-pause-circle"></i>
+                    Pause
+                  </button>
+                  
+                  <button
+                    type="button"
+                    id="stop8Button" disabled >
+                  <i class="far fa-stop-circle"></i>Stop</button>                                
+                  <button 
+                  type="button"
+                  id="upload8Button"
+                  disabled>
+                  <i class="fas fa-cloud-upload-alt"></i>
+                    upload
+                  </button>
+                   
+                   <ol id="recordingsList8" style="list-style-type: none;">
+                    <li id='countnormal'></li>                  
+                  </ol>
+
+                </div>
+              </div>
+            </div>
+            <div class="input-box">
+              <span class="label">9.Counting(Fast)</span>
+              <div id="countfastContainer">
+                <div class="">
+                  <div id="audioSupport"></div>
+                  
+                  <button
+                    type="button"
+                    id="record9Button">
+                  <i class="fas fa-microphone-alt"></i>record</button>
+
+                  <button 
+                  type="button" 
+                  id="pause9Button" 
+                  disabled>
+                    <i class="far fa-pause-circle"></i>Pause
+                  </button>
+                  
+                  <button
+                    type="button"
+                    id="stop9Button" disabled >
+                  <i class="far fa-stop-circle"></i>Stop</button>                                
+                  <button 
+                  type="button"
+                  id="upload9Button"
+                  disabled>
+                  <i class="fas fa-cloud-upload-alt"></i>
+                    upload
+                  </button>
+                   
+                   <ol id="recordingsList9" style="list-style-type: none;">
+                    <li id='countfast'></li>                  
+                  </ol>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> 
+
+
+
+        <div class="submit">
+            <button type="submit" ><i class="fas fa-upload"></i>Finish</button>  
+          </div>
+      </form>
+
+    
+    </main>
+
+    
+    
+    <script src="{{url_for('static', filename='js/recorder.js')}}"></script>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>  
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribution | Welcome page</title>
+    <!-- <link rel="stylesheet" href="test.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/test.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="header">
+        <h1>C-19 sound testing</h1>  <span>contribution</span>
+    </div>
+    <div class="details">
+      <ul >
+        <li>
+          Welcome to C-19 sound tester, this web application would procure the basic demographics , medical history, voice samples.           
+        </li>
+        <li>
+          Ensure that the recording is performed in a quiet and calm place. 
+        </li>
+        <li>
+          The entire recording and data collection must be completed within 15 minutes of its commencement.          
+        </li>
+        <li>
+          Ensure that the device is kept at a distance of 20cm from the face of the user.          
+        </li>
+        <li>
+          The device should not be shared with anyone prior to sanitation and cleaning. 
+        </li>
+        <li>          
+          The participation in the study is purely voluntary and the details collected will not be used for anything other than research purposes.
+        </li>
+        <li>
+          The survey form is divided into two parts for the ease of the user.There will be 3 divisions, namely medical data, symptoms and voice recording part.There will be two types of datas in the survey form, the one's marked with * are mandatory.
+        </li>
+        <li>           
+          By clicking <span style="border: 1px solid rgba(0, 0, 0, 0.226); border-radius:10px; padding:3px;"><i class="fas fa-arrow-circle-right"></i>Proceed</span> , You are signing up for our terms and conditions guidelines, as well as giving us your consent to use your data solely for research and development purposes.
+        </li>  
+      </ul>
+
+    <div class="proceed">
+    <form action="covid_test_index" method="post">
+        <button  type="submit" class="proceed_btn">
+          <i class="fas fa-arrow-circle-right"></i>
+          Procced
+        </button>
+      </form>
+    </div>      
+
+
+    </div>             
+</body>
+</html>

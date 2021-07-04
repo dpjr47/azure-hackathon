@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="negative-positive.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/negative-positive.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="user signinBx">
+          <div class="formBx">
+            <form action="redirect">              
+              <h2>Result</h2>
+              <!-- fetch from backend -->
+
+              <div id="bg">
+                <img width="300px" src="{{ url_for('static',filename='negative.png') }}" alt="">
+              </div>
+
+              <div id="result">
+                <p > You are tested <b>NEGATIVE</b> 
+                    <span style="display: flex; justify-content:space-around">
+                    <br> This doesn't mean you are immune to covid 19, please remain inside your homes, when stepping outside wear your mask properly, wash your hands frequently and observe physical distance of 2m. 
+                    </span> 
+                    <br> Also vaccinate yourself against COVID 19. 
+                    <br> 
+                    <br> Click the below button to redirect to home.
+                </p>
+                </div>
+              <input type="submit" name="" value="Home" />     
+                       
+            </form>
+          </div>
+        </div>        
+      </div>
+
+</body>
+</html>

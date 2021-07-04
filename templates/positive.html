@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="negative-positive.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/negative-positive.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="user signinBx">
+          <div class="formBx">
+            <form action="redirect">              
+              <h2>Result</h2>
+              <!-- fetch from backend -->
+
+              <div id="bg">
+                <img width="300px" src="{{ url_for('static',filename='positive.png') }}" alt="">
+              </div>
+
+              <div id="result">
+                <p > You are tested <b>POSITIVE</b> 
+                    <span style="display: flex; justify-content:space-around">
+                    <br> Its okay , you dont have to worry, you data is being sent to corona control room to the government officials, you'll be contacted by officials, kindly cooperate with them foryour safety as well as other. 
+                    </span> 
+                    <br> In the mean time, keep yourself in a self quarantine and make sure you pass this information to local authorities, wear proper face mask, wash your hands too. 
+                    <br> 
+                    <br>Do not share the device in which you took the test before sanitizing.
+                    <br>
+                    <br> Click the below button to redirect to home.
+                </p>
+                </div>
+              <input type="submit" name="" value="Home" />   
+             
+                       
+            </form>
+          </div>
+        </div>        
+      </div>
+
+</body>
+</html>

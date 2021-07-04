@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="metadata.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/metadata.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="user signinBx">
+          <div class="formBx">
+            <form action="meta_photo" enctype="multipart/form-data" method="POST">              
+              <h2>Profile Picture</h2>
+              <!-- fetch from backend -->
+              
+              <p>Complete your profile by adding a profile picture</p> <br>
+              <div>
+                <img id="output" height="150px" width="150px" style="border: none;" src="https://st2.depositphotos.com/1009634/7235/v/600/depositphotos_72350117-stock-illustration-no-user-profile-picture-hand.jpg"/> 
+              </div> <br>
+              <!-- <input type="file" name="input_image" accept="image/*" onchange="loadFile(event)"> -->
+              <input type="file" name="input_image" >
+              
+                                       
+
+              <input type="submit" name="" value="Submit" />              
+            </form>
+          </div>
+        </div>        
+      </div>
+
+      <!-- <script>
+        var loadFile = function(event) {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+            URL.revokeObjectURL(output.src) // free memory
+            }
+        };
+        </script> -->
+</body>
+</html>

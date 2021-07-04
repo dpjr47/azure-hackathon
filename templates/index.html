@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>C19 Login</title>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign in & Sign Up Form | Vanilla Javascript</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style_index.css') }}">
+<script src="{{url_for('static', filename='js/script_index.js')}}"></script> 
+<link rel="icon" href="icon.png" type="image/x-icon">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+    <div class="container">
+     
+      <div class="user signinBx">
+        <div class="formBx">
+          
+          <form action="{{ url_for('login')}}" method="POST">
+
+           <img src="logo.png" alt="logo" width="200" height="150"> 
+                      
+            
+            <h2>Sign In</h2>
+            <input type="text" name="user_email" placeholder="User_email" />
+            <input type="password" name="user_password" placeholder="Password" />
+            <input type="submit" name="" value="Login" />
+            <p class="signup">
+              Don't have an account ?
+              <a href="#" onclick="toggleForm();">Sign Up.</a>
+            </p>
+            <p class="contrib">
+              Want to become a contributer?<br>
+              No sign-in required                       
+              <br>(NB: only for corona positive patients)
+              <!-- <br><a href="#">Click here</a>   -->
+              <div class="proceed">
+                <form action="survey" method="post">
+                    <button  type="submit" class="proceed_btn">
+                      <i class="fas fa-arrow-circle-right"></i>
+                      Click here
+                    </button>
+                  </form>
+                </div>
+              
+            </p>
+          </form>
+          {%if invalid==1%}
+          <br>
+          <p>invalid password</p>
+          <br>
+          {%endif%}
+
+        </div>
+      </div>
+      <div class="user signupBx">
+        <div class="formBx">
+          <form action="{{ url_for('signup')}}" method="POST">
+            <img src="logo.png" alt="logo" width="200" height="150"> 
+            <h2>Create an account</h2>
+            <input type="text" name="user_name" placeholder="Username" />
+            <input type="email" name="user_email" placeholder="Email Address" />
+            <input type="password" name="user_password" placeholder="Create Password" />
+            <input type="password" name="user_pass_check" placeholder="Confirm Password" />
+            <!-- <input type="submit" name="" value="Sign Up" /> -->
+            <button type="submit">Sign Up</button>
+            <p class="signup">
+              Already have an account ?
+              <a href="#" onclick="toggleForm();">Sign in.</a>
+            </p>
+            <p class="contrib">
+              Want to become a contributer?<br>
+              No sign-in required 
+              <br>(NB: only for corona positive patients)
+              <div class="proceed">
+                <!-- <form action="survey" method="post"> -->
+                  <a href="contribution"></a>
+                    <button  type="submit" class="proceed_btn">
+                      <i class="fas fa-arrow-circle-right"></i>
+                      Click here
+                    </button></a>
+                  <!-- </form> -->
+                </div>              
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+</body>
+<!-- partial -->
+  
+</html>

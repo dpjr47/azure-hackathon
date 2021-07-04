@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CovoX | Super Admin</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="supe.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/supe.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="navbar">
+        <span class="navbar-toggle" id="ham-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="index.html"><img  class="logo" src="assets/FLG__1_-removebg-preview.png" alt="logo" width="100px"></img></a>
+        <ul class="navbar_list" id="nav-menu">
+            <li>
+                <a href="#li-positive" class="nav-links">Positive</a>
+            </li>
+            <li>
+                <a href="#li-full-list" class="nav-links">Full List</a>
+            </li>
+            <li>
+                <a href="#li-add-admin" class="nav-links">Add Admin</a>
+            </li>
+            <li>
+                <a href="#li-admin" class="nav-links">Admin List</a>
+            </li>           
+            <li>
+                <a href="#" class="logout" id="logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        
+
+        <div class="positive" id="li-positive">
+            <center><h1 style="text-decoration: underline; text-transform:uppercase;">List of positive patients</h1></center> <br>         
+            <table>
+                <tr id="header">
+                    
+                    <th>DATE</th>
+                    <th>STATE</th>
+                    <th>NAME</th>
+                    <th>VIEW ACCOUNT</th>
+                    <th>REMOVE</th>       
+                    
+                </tr>
+                {%for w in current%}
+                <tr>
+                    <td>{{w['_id']}}</td>
+                    <td>{{w['state']}}</td>
+                    <td>{{w['name']}}</td>
+                    <td><a href="#">view profile</a></td>
+                    <td><button type="button">Remove</button></td>
+        
+                </tr>
+                {%endfor%}
+                
+                
+                
+                
+            </table>
+        </div>
+
+        <div class="full_list" id="li-full-list">
+            <center><h1 style="text-decoration: underline; text-transform:uppercase;">List of total registered persons</h1></center> <br>         
+            <table>
+                <tr id="header">
+                    
+                    <th>DATE</th>
+                    <th>STATE</th>
+                    <th>NAME</th>
+                    <th>VIEW ACCOUNT</th>
+                         
+                    
+                </tr>
+                {%for w in complete%}
+                <tr>
+                    <td>{{w['_id']}}</td>
+                    <td>{{w['state']}}</td>
+                    <td>{{w['name']}}</td>
+                    <td><a href="#">view profile</a></td>
+                    
+        
+                </tr>
+                {%endfor%}
+
+            </table>
+        </div>
+
+        <div class="add_admin" id="li-add-admin">
+            <center><h1 style="text-decoration: underline; text-transform:uppercase;">Add Admin</h1></center> <br>
+            <form  action="add_admin" method="post"  id="login-form">
+                <p>
+                <input type="text" id="unique_id" name="unique_id" placeholder="Unique ID" required>
+                </p>
+                <p>
+                <input type="text" id="name" name="name" placeholder="Full name" required>
+                </p>
+                <p>
+                <input type="number" id="number" name="number" placeholder="Phone Number" required>
+                </p>
+                <p>
+                <input type="password" id="email" name="password" placeholder="Password" required>
+                </p>
+                <input type="submit" id="login" value="Add">
+                </p>
+              </form>
+        </div> 
+
+        <div class="admin" id="li-admin">
+            <center><h1 style="text-decoration: underline; text-transform:uppercase;">List of Admins</h1></center> <br> 
+            <p>*default password reset to 123</p>  <br>       
+            <table>
+                <tr id="header">
+                    <th>Unique ID</th>
+                    <th>Name</th>
+                    <th>Phone number</th>
+                    <th>*Reset Password</th>
+                    <th>Delete Account</th>       
+                    
+                </tr>
+                {%for w in admins%}
+                <tr>
+                    <td>{{w['_id']}}</td>
+                    <td>{{w['name']}}</td>
+                    <td>{{w['phone_number']}}</td>
+                    <td><button type="button">Reset</button></td>
+                    <td><button type="button">Delete</button></td>
+        
+                </tr>
+                {%endfor%}
+
+            </table>
+        </div>
+
+        
+    </div><!-- Do not delete  -->
+
+<script>
+    let mainNavbar =document.getElementById('nav-menu')
+
+let navToggle = document.getElementById('ham-toggle')
+
+navToggle.addEventListener('click', function(){
+    mainNavbar.classList.toggle('active')
+});
+</script>
+
+</body>
+</html>

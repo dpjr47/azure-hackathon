@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Teko:700");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@100;200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  background: #EBECF0;
+  background-size: 40px 40px;
+  background-image: url('https://simg.nicepng.com/png/small/92-920628_pattern-square-special-game-patterns-squares-grid-dots.png');
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.header > h1 {
+  font-size: 2.8em;
+  text-transform: uppercase;
+  color: #72170d;
+  margin: 0.5em;
+  text-align: center;
+  font-family: "Teko", sans-serif;
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.header > h1:before {
+  content: "";
+  position: absolute;
+  transform: translate(0em, 0em);
+  width: 0;
+  height: 0;
+  border-top: 0.5em solid #EBECF0;
+  border-right: 0.5em solid transparent;
+}
+
+.header > h1:after {
+  content: "";
+  position: absolute;
+  transform: translate(-0.45em, 0.3em);
+  width: 0;
+  height: 0;
+  border-bottom: 0.5em solid #EBECF0;
+  border-left: 0.5em solid transparent;
+}
+
+.header span {
+  margin-top: 5px;
+  color: #0047ab;
+  word-spacing: 2px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: 27px 0;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.header span:after,
+.header span:before {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid #6e0b00;
+  border-top: 1px solid #6e0b00;
+  height: 5px;
+  background-color: #EBECF0;
+}
+
+.details > ul {
+  padding: 30px;
+  margin-top: -75px;
+  list-style-type: armenian;
+}
+
+.details > ul > li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: justify;
+  text-justify: inter-word;
+  border-radius: 15px;
+}
+
+.proceed {
+  text-align: center;
+}
+
+.proceed_btn {
+  padding: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  letter-spacing: 5px;
+  margin-top: -5px;
+  margin-bottom: 25px;
+  font-size: 1.3em;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+  transition: all 0.2s ease-in-out;
+}
+
+.proceed_btn:hover {
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+}
+
+.proceed_btn:active {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+
+@media screen and (min-width: 500px) {
+  .header > h1 {
+    font-size: 7em;
+  }
+
+  .header span {
+    font-size: 2.5em;
+  }
+
+  .details > ul > li {
+    margin-bottom: none;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.survey {
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 300;
+  color: #BABECC;
+  text-shadow: 1px 1px 1px #fff;
+  -webkit-text-fill-color: #0047ab; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #BABECC;
+}
+
+main {
+  height: auto;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+}
+
+.form_inner_headings > h3 {
+  color: #0047ab;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.form_inner_headings > table {
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  background-color: rgba(119, 136, 153, 0.096);
+  margin-top: 10px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  padding: 10px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.input-box > input,
+select {
+  padding: 10px;
+  border: none;
+  background: none;
+  box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #fff;
+  color: #7c4b4b;
+}
+
+.input-box > input:focus,
+select:focus {
+  border: 1px solid #0047ab;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  transition: all 0.5s;
+  color: #0047ab;
+}
+
+.input-box > span {
+  font-weight: bold;
+  color:#6e0b00;
+}
+
+.input-box > label {
+  font-size: 15px;
+}
+
+.checkboxes {
+  margin-top: 10px;
+}
+.checkbox {
+  cursor: pointer;
+  margin: 10px;
+}
+
+.checkboxes label {
+  display: flex;
+}
+.checkboxes input {
+  vertical-align: middle;
+}
+
+button {
+  padding: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: -7px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+button > i {
+  margin-right: 5px;
+}
+
+.submit {
+  text-align: center;
+}
+
+.submit > button {
+  padding: 15px;
+  margin: 15px;
+  font-size: 1em;
+  font-weight: 300;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+  transition: all 0.2s ease-in-out;
+}
+
+.submit > button:hover {
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+}
+
+.submit > button:active {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+
+@media screen and (min-width: 500px) {
+  main{
+    width: 600px;
+margin: 0 auto;
+  }
+}  

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main page</title>
+    <!-- <link rel="stylesheet" href="main.css" /> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      
+
+      
+      <div class="box a">
+
+        
+        <main id="home" >
+          <div class="greet">
+
+            <div class="greet-texts">
+              <h1>Welcome,</h1>
+              <h3>{{user_name}}</h3>
+            </div>
+    
+            <div class="greet-image">
+              <img src="{{img}}" alt="" height="100px" width="100px">
+              <!-- <img src="{{url_for('static', filename=img)}}"  alt="..." height="100px" width="100px"> -->
+            </div>
+    
+          </div>
+          {%if data==0%}
+          <h3>you have not taken a Test</h3>
+          {%else%}
+
+        <div class="previous_history" >
+
+          <div class="table-abovehead">
+            <h3> Previous history</h3>
+          </div>
+          
+
+          <div class="table-coloumn">
+            <table>
+              <tr>
+                <th>No.</th>
+                <th>Date</th>
+                <th>Result</th>
+              </tr>
+              {%for x in data %}
+              <tr>
+                <td>{{x['number']}}</td>
+                <td>{{x['_id']}}</td>
+                <td>{{x['result']}}</td>
+              </tr>
+              {%endfor%}
+
+            </table>
+          </div>
+
+        </div>
+        {%endif%}
+
+        <div class="news">
+          <div class="scroll">
+            <h3>Covid-19 India updates</h3>
+            <marquee behavior="" direction="up" >
+              1.NandhuSer elected as next pm of india
+              <hr>
+              2.Sagarettan reaching pluto next month
+              <hr>
+              3.Rahibka 'sagaoravam' CM ayi sathyaprathinja edthu
+              <hr>
+              4.Imbukka and his whale kunj becoming centre of attraction
+              <hr>
+              5.Sabah ser the next thor?
+              <hr>
+              6.Shyam ser is missing!!? panikk
+              <hr>
+              7.Thank MO later
+              <hr>
+            </marquee>
+          </div>
+         
+        </div>
+
+        <div class="news">
+          <div class="scroll">
+            <h3>Covid-19 India updates</h3>
+            <marquee behavior="" direction="up" >
+              1.NandhuSer elected as next pm of india
+              <hr>
+              2.Sagarettan reaching pluto next month
+              <hr>
+              3.Rahibka 'sagaoravam' CM ayi sathyaprathinja edthu
+              <hr>
+              4.Imbukka and his whale kunj becoming centre of attraction
+              <hr>
+              5.Sabah ser the next thor?
+              <hr>
+              6.Shyam ser is missing!!? panikk
+              <hr>
+              7.Thank MO later
+              <hr>
+            </marquee>
+          </div>
+         
+        </div>
+
+        <div class="bottom-child">
+          <center>random text-dnt delte</center> 
+          <br>         
+        </div>
+
+      </main>  
+
+      <main id="account">
+        <div class="greet-faq">
+
+          <div class="greet-texts">
+            <h1><</h1>
+            
+          </div>
+         
+        </div> 
+        <section >
+          <div class="box">
+            <h2><span class="material-icons">settings</span>Settings</h2>
+          </div>
+          <div class="box-settings">
+            <div class="box-settings-inner">
+              <a>
+                <span class="material-icons">
+                  person
+                  </span>
+                <h4>Edit profile</h4></a> 
+                <div id="profile">
+                </div>
+              
+              </div>
+              
+              
+            <div class="box-settings-inner">
+              <a>
+                <span class="material-icons">
+                  vpn_key
+                  </span>
+                  <h4>Change password</h4>
+              </a>
+            </div>
+          </div>
+          
+          <div id="logout">
+            <a>
+              <span class="material-icons">logout</span><h3>Logout</h3>
+            </a>
+          </div>
+          
+        </section>
+        
+        
+       
+      </main>
+
+      <main id="faq">
+        <div class="greet-faq">
+
+          <div class="greet-texts">
+            <h1><</h1>
+            
+          </div>
+         
+        </div>
+
+        <div class="box" id="faq-header">
+          <h2>FAQ - CovoX</h2>
+        </div>
+        <section>
+          <div class="faq__main">
+            <details>
+              <summary>What is covox?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>How to contribute vocal data ?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>how significant is the covid test in covox?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>how to contribute if iam  not covid  positive?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>My covid test shows iam covid negative is it 100% reliable?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>My covid test in covox shows iam covid positive,so what is the next step to follow ?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>what is the best way to record the audio?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>will the ability of the device to record audio affect the results?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Two adjacent test shows iam covid positive and negative which value should i rely on ?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Is there any chance of misuse of my personal data?</summary>
+              <div class="faq__content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis obcaecati fugit possimus esse sint, assumenda hic cupiditate doloremque ducimus blanditiis consectetur deleniti quo, fuga ipsam ipsa excepturi voluptatum porro.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <div class="bottom-child">
+          <center>random text-dnt delte</center> 
+          <br>         
+        </div>
+      </main>
+
+      <main id="test" >
+        <div class="greet-faq">
+
+          <div class="greet-texts">
+            <h1><</h1>            
+          </div>         
+         
+        </div>
+        <div id="faq-header">
+          <h2>Covid Test</h2>
+        </div>
+
+        <div id="test-box">
+          <a  href="covid_test">
+            <span class="material-icons">
+              graphic_eq
+            </span> <br>
+            <h3>Click here to redirect to the test page </h3>
+          </a>
+          
+        </div>
+      </main>
+
+      </div>
+
+
+      
+      <!--Footer Navigation bar-->
+      <div class="box c">
+        <nav class="nav">
+
+          <a onclick="mainshow1()" class="nav__link">
+            <i class="material-icons nav__icon">quiz</i>
+            <span class="nav__text">FAQ</span>
+          </a>
+
+          <a onclick="mainshow2()" class="nav__link">
+            <i class="material-icons nav__icon">dashboard</i>
+            <span class="nav__text">Test</span>
+          </a>
+
+          <a onclick="mainshow3()" class="nav__link">
+            <i class="material-icons nav__icon">home</i>
+            <span class="nav__text">Home</span>
+          </a>
+
+          <a onclick="mainshow4()" class="nav__link">
+            <i class="material-icons nav__icon">person</i>
+            <span class="nav__text">Profile</span>
+          </a>
+
+          
+        </nav>
+      </div>
+      <!--Footer Navigation bar-->
+
+
+    </div> <!--main wrapper div-->
+
+    <!-- <script src="main.js"></script> -->
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+  </body>
+</html>

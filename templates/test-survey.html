@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contribution | Test Page</title>
+    <!-- <link rel="stylesheet" href="test.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/test.css') }}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    
+    <main>
+      <div class="survey">
+        <h1 >Survey</h1>
+      </div>      
+      <form action="covid_test_survey" method="post">
+        <section class="basic">
+          
+
+          <div class="user-details">
+
+
+            <div class="form_inner_headings">
+              <h3>Medical data</h3>
+            </div>
+
+            <div class="input-box">
+              
+              <span class="label"
+                >Do you have any of the following medical conditions?</span
+              >
+              <div class="checkboxes">
+                <label> 
+                  <input type="hidden" name="asthma" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="asthma" value="1" class="checkbox" id="" />Asthma </label>
+                <label>
+                  <input type="hidden" name="Cystic_fibrosis" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="Cystic_fibrosis" value="1" class="checkbox" id="" />Cystic fibrosis
+                </label>
+                <label>
+                  <input type="hidden" name="COPD/Emphysema" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="COPD/Emphysema" value="1" class="checkbox" id="" />COPD/Emphysema
+                </label>
+                <label>
+                  <input type="hidden" name="Pulmonary_fibrosis" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="Pulmonary_fibrosis" value="1" class="checkbox" id="" />Pulmonary fibrosis
+                </label>
+                <label> 
+                  <input type="hidden" name="Pnuemonia" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="Pnuemonia" value="1" class="checkbox" id="" />Pnuemonia 
+                </label>
+                <label>
+                  <input type="hidden" name="other_lung_disease" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="other_lung_disease" value="1" class="checkbox" id="" />Other lung disease
+                </label>
+                <label>
+                  <input type="hidden" name="high_blood_pressure" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="high_blood_pressure" value="1" class="checkbox" id="" />High Blood Pressure
+                </label>
+                <label> 
+                  <input type="hidden" name="Angina" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="Angina" value="1" class="checkbox" id="" />Angina 
+                </label>
+                <label>
+                  <input type="hidden" name="Previous_stroke/ischaemic_attack" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="Previous_stroke/ischaemic_attack" value="1" class="checkbox" id="" />Previous stroke or Transient ischaemic attack 
+                </label>
+                <label>
+                  <input type="hidden" name="previous_heart_attack"  value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="previous_heart_attack"  value="1" class="checkbox" id="" />Previous heart attack
+                </label>
+                <label>
+                  <input type="hidden" name="valvular_heart_disease" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="valvular_heart_disease" value="1" class="checkbox" id="" />Valvular heart disease
+                </label>
+                <label>
+                  <input type="hidden" name="other_heart_disease" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="other_heart_disease" value="1" class="checkbox" id="" />Other heart disease
+                </label>
+                <label>
+                  <input type="hidden" class="checkbox" name="Diabetes" value="0" id="" />
+                  <input type="checkbox" class="checkbox" name="Diabetes" value="1" id="" />Diabetes 
+                </label>
+                <label>
+                  <input type="hidden" class="checkbox" name="Cancer" value="0" id="" />
+                  <input type="checkbox" class="checkbox" name="Cancer" value="1" id="" />Cancer 
+                </label>
+                <label>
+                  <input type="hidden" name="previous_organ_transplant" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="previous_organ_transplant" value="1" class="checkbox" id="" />Previous organ transplant
+                </label>
+                <label>
+                  <input type="hidden" name="hiv/impaired_immune" class="checkbox" value="0" id="" />
+                  <input type="checkbox" name="hiv/impaired_immune" class="checkbox" value="1" id="" />HIV or impaired immune
+                  system
+                </label>
+                <label>
+                  <input type="hidden" name="othr_long_term_condition" value="0" class="checkbox" id="" />
+                  <input type="checkbox" name="othr_long_term_condition" value="1" class="checkbox" id="" />Other long-term condition
+                </label>
+            </div>
+            </div>
+           
+            <div class="input-box">
+              <span class="label">Select appropriate options from below</span> <br>
+              <select name="user_smoking">
+                <option value="" selected disabled hidden>Smoking habits,including e-cigarettes*</option>
+                <option value="current_smoker">Current Smoker</option>
+                <option value="ex_smoker">Ex Smoker</option>
+                <option value="never_used">Never used at all</option>
+                <option value="e_cigarettes">E-cigarettes only</option>
+              </select>
+            </div>
+            <div class="input-box">
+              <select name="user_vaccine_status">
+                <option value="" selected disabled hidden>Vaccination status*</span></option>
+                <option value="one">One dose</option>
+                <option value="two">Two dose</option>
+                <option value="not_done">Not done</option>
+              </select>
+            </div>
+
+            <div class="form_inner_headings">
+              <h3>Symptoms</h3>
+            </div>
+
+            <div class="input-box">
+              <span class="label">Do you have any of the symptoms?(*)</span>
+              <label> 
+                <input type="hidden" value="0" name="user_cold" class="checkbox" id="" />
+                <input type="checkbox" value="1" name="user_cold" class="checkbox" id="" />Cold </label>
+              <label> 
+                <input type="hidden" value="0" name="user_cough" class="checkbox" id="" />
+                <input type="checkbox"  value="1" name="user_cough" class="checkbox" id="" />Cough </label>
+              <label> 
+                <input type="hidden" value="0" name="user_fever" class="checkbox" id="" />
+                <input type="checkbox" value="1" name="user_fever" class="checkbox" id="" />Fever </label>
+              <label> 
+                <input type="hidden" value="0" name="user_diarrhoea" class="checkbox" id="" />
+                <input type="checkbox" value="1 "name="user_diarrhoea" class="checkbox" id="" />Diarrhoea </label>
+              <label>
+                <input type="hidden" value="0" name="sore_throat" class="checkbox" id="" />
+                <input type="checkbox" value="1" name="sore_throat" class="checkbox" id="" />Sore throat
+              </label>
+              <label>
+                <input type="hidden" value="0" name="difficulty_breathing" class="checkbox" id="" />
+                <input type="checkbox" value="1" name="difficulty_breathing" class="checkbox" id="" />Difficulty in breathing
+              </label>
+              <label>
+                <input type="hidden" value="0" name="dizziness/confusion" class="checkbox" id="" />
+                <input type="checkbox" value="1" name="dizziness/confusion" class="checkbox" id="" />Dizziness, confusion or
+                vertigo
+              </label>
+              <label> 
+                <input type="hidden" value="0" name="headache" class="checkbox" id="" />
+                <input type="checkbox" value="1" name="headache" class="checkbox" id="" />Headache </label>
+              <label>
+                <input type="hidden" value="0" name="running/blocked_nose" class="checkbox" id="" />
+                <input type="checkbox" value="1" name="running/blocked_nose" class="checkbox" id="" />Running or blocked nose
+              </label>
+              <label>
+                <input type="hidden" value="0" name="loss_taste" class="checkbox" id="" />
+                <input type="checkbox" value="1" name="loss_taste" class="checkbox" id="" />Loss of taste or smell
+              </label>
+              <label>
+                <input type="hidden" value="0" name="muscle_pain" class="checkbox" id="" />
+                <input type="checkbox" value="1" name="muscle_pain" class="checkbox" id="" />Muscle pain
+              </label>
+              <label>
+                <input type="hidden" value="0" name="fatique" class="checkbox" id="" />
+                <input type="checkbox" value="1" name="fatique" class="checkbox" id="" />Fatigue </label>
+            </div>
+          </div>
+        </section>
+
+        
+        <div class="submit">
+          <button type="submit" ><i class="fas fa-arrow-circle-right"></i>Procced to recording</button>  
+        </div>
+      </form>
+
+    
+    </main>
+
+    <script language="javascript">
+      populateCountries("country", "state");
+    </script>
+    <script src="{{url_for('static', filename='js/countries.js')}}"></script>
+    <script src="{{url_for('static', filename='js/recorder.js')}}"></script>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>  
+  </body>
+</html>
